@@ -1,9 +1,10 @@
-<h1><%= image_tag "banner.png", alt: "Cocktail Banner", width: 200 %></h1>
+<div class="container">
+  <h2 class="header-txt">cocktail recipes</h2>
+  <ul class="card-container">
+    <% @cocktails.each do |cocktail| %>
+      <li class="card"><%= link_to cocktail.name, cocktail_path(cocktail), class: "header-txt"%></li>
+    <% end %>
+  </ul>
 
-<ul class="card-container">
-  <% @cocktails.each do |cocktail| %>
-    <li class="card"><%= link_to cocktail.name, cocktail_path(cocktail)%></li>
-  <% end %>
-</ul>
-
-<p><%= link_to "Add New Cocktail", new_cocktail_path, class: "btn-add" %> </p>
+  <p><%= link_to "+ New Cocktail", new_cocktail_path, class: "btn-add header-txt" %> </p>
+</div>

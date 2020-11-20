@@ -8,11 +8,36 @@
 require 'open-uri'
 require 'json'
 
+require_relative 'cockails.rb'
+
+# CREATING INGREDIENTS DROPDOWN LIST
+puts '1. Creating ingredients list...'
+
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list';
 json_string = JSON.parse(open(url).read);
 
-json_string['drinks'].each do |ingredient|
-  Ingredient.create!(
-    name: ingredient['strIngredient1']
-  )
-end  
+json_ingredients = json_string['drinks'].map do |ingredient|
+  ingredient['strIngredient1'].capitalize
+end
+
+extra_ingredients = %w(Yakult Beer Malibu Soju Sake)
+ingredients = json_ingredients + extra_ingredients
+
+puts 'Sorting ingredients list alphabetically...'
+alpha_ingredients = ingredients.sort!
+
+alpha_ingredients.each do |ingredient|
+  Ingredient.create!(name: ingredient)
+end
+
+puts "Finished creating #{Ingredient.all.count} ingredients!"
+
+# CREATING COCKTAILS
+puts "Creating cocktails..."
+
+cocktails.each do |cocktail|
+  new_cocktail = Cocktail.create!(
+    name: cocktail
+end
+
+puts "Finished creating #{Cocktail.all.count} cocktails!"

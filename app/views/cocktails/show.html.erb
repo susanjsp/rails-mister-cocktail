@@ -1,14 +1,18 @@
-<h2><%= @cocktail.name %></h2>
-<% @cocktail.doses.each do |dose|%>
-  <h3>
-    <%= "#{dose.ingredient.name} - #{dose.description}" %>
-    <%= link_to "Delete",
-                  dose_path(dose),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-  </h3>
-<% end %>
+<div class="wrapper">
+  <%= link_to "back", cocktails_path, class:"btn-add header-txt"%>
 
-<h4> <%= link_to 'Add doses to cocktail', new_cocktail_dose_path(@cocktail) %> </h4>
-<h4> <%= link_to "Back to home", cocktails_path %> </h4>
+  <h2 class="header-txt"><%= @cocktail.name %></h2>
+  <h3 class="header-txt">Ingredients</h3>
+  <% @cocktail.doses.each do |dose|%>
+    <h3>
+      <%= "#{dose.ingredient.name} - #{dose.description}" %>
+      <%= link_to "Delete",
+                    dose_path(dose),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+    </h3>
+  <% end %>
+
+  <%= link_to '+ ingredient', new_cocktail_dose_path(@cocktail), class:"btn-add header-txt"%>
+</div>
 

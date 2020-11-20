@@ -1,6 +1,12 @@
-<%= simple_form_for [ @cocktail] do |c| %>
-  <%= c.input :name %>
-  <%= c.submit "Create cocktail", class: "btn btn-primary" %>
-<% end %>
 
-<h4> <%= link_to "Back to home", cocktails_path %> </h4>
+<div class="wrapper">
+<h4> <%= link_to "Back", cocktails_path, class: "btn-add header-txt" %> </h4>
+
+<h2 class="header-txt">Create new cocktail</h2>
+
+  <%= simple_form_for [ @cocktail] do |c| %>
+    <%= c.input :name %>
+    <%= c.input :photo, as: :file %>
+    <%= c.submit "+ Create", class: "btn-add header-txt" %>
+  <% end %>
+</div>

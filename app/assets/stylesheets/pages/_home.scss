@@ -1,22 +1,38 @@
 // Specific CSS for your home-page
 body {
   background: rgb(0,0,0);
-  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(17,17,17,0.6446953781512605) 53%, rgba(94,94,94,1) 100%);
+  // background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(17,17,17,0.6446953781512605) 53%, rgba(94,94,94,1) 100%);
   background: cover;
 }
 
 .container {
   text-align: center;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center
+}
+
+.header-txt {
+  color: white;
+  font-family: $card-header-font;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 h1 {
-  font-size: 30px;
   text-align: center;
-  
+  margin: 0;
+  #banner {
+    height: 160px;
+  }
 }
-
-p {
-  display: flex;
-  justify-content: center;
-  width: 30%;
+h2 {
+  letter-spacing: 0.1em;
 }

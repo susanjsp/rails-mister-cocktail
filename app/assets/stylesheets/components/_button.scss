@@ -1,20 +1,23 @@
 .btn-add {
-  display:flex;
+  display: inline-block;
   align-items: center;
   text-align: center;
   justify-content: space-around;
-  background: linear-gradient(90deg, rgba(77,251,232,1) 0%, rgba(154,191,242,1) 50%, rgba(240,121,253,1) 100%);  
-  padding: 8px 8px;
-  border-radius: 10px;
-  margin: 0;
-  font-family: $card-header-font;
-  color: white;
-  text-decoration: none;
+  background: $main-gradient;
+  padding: 8px 16px;
+  border-radius: 20px;
+  // width: 40%;
+  margin: 16px 0;
+  border: none;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.2em;
   box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.1);
 }
-  
 
 .btn-add:hover {
-  color: white;
   text-decoration: none;
+  color: white;
+  letter-spacing: 0.25em;
+  transition: 0.3s ease-in;
 }
