@@ -1,0 +1,20 @@
+.btn-add {
+  display:flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  background: linear-gradient(90deg, rgba(77,251,232,1) 0%, rgba(154,191,242,1) 50%, rgba(240,121,253,1) 100%);  
+  padding: 8px 8px;
+  border-radius: 10px;
+  margin: 0;
+  font-family: $card-header-font;
+  color: white;
+  text-decoration: none;
+  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.1);
+}
+  
+
+.btn-add:hover {
+  color: white;
+  text-decoration: none;
+}

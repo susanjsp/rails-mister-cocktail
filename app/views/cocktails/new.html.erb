@@ -1,0 +1,6 @@
+<%= simple_form_for [ @cocktail] do |c| %>
+  <%= c.input :name %>
+  <%= c.submit "Create cocktail", class: "btn btn-primary" %>
+<% end %>
+
+<h4> <%= link_to "Back to home", cocktails_path %> </h4>
