@@ -17,27 +17,40 @@ url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list';
 json_string = JSON.parse(open(url).read);
 
 json_ingredients = json_string['drinks'].map do |ingredient|
-  ingredient['strIngredient1'].capitalize
+  ingredient['strIngredient1'].downcase
 end
 
-extra_ingredients = %w(Yakult Beer Malibu Soju Sake)
+extra_ingredients = %w(yakult beer malibu soju sake 'coconut cream')
 ingredients = json_ingredients + extra_ingredients
 
 puts 'Sorting ingredients list alphabetically...'
 alpha_ingredients = ingredients.sort!
 
 alpha_ingredients.each do |ingredient|
-  Ingredient.create!(name: ingredient)
+  Ingredient.create!(name: ingredient.capitalize)
 end
 
 puts "Finished creating #{Ingredient.all.count} ingredients!"
 
 # CREATING COCKTAILS
-puts "Creating cocktails..."
+puts "Creating cocktails with ingredients & doses..."
 
-cocktails.each do |cocktail|
+cocktails.each do |cocktail, ingredients|
+  dose = []
   new_cocktail = Cocktail.create!(
-    name: cocktail
+    name: cocktail.capitalize,
+    ingredients.each do |ingredient, dose|
+      Dose.create!(
+        description: dose,
+        ingredient: Ingredient.find_by(name: ingredient),
+        cocktail: cocktail.capitalize
+      )
+    end
+  )
 end
 
 puts "Finished creating #{Cocktail.all.count} cocktails!"
+
+# For cocktails hash,
+# Create new cocktail
+# For each cocktail, create name, doses array
