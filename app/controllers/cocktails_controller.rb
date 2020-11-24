@@ -1,7 +1,7 @@
 class CocktailsController < ApplicationController
   def index
     cocktails = Cocktail.all
-    @cocktails = cocktails.sort_by { |cocktail| cocktail.name }
+    @cocktails = cocktails.sort_by { |cocktail| cocktail.name.downcase }
   end
 
   def show
