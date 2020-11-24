@@ -2,8 +2,8 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  width: 100vw;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .card {
@@ -15,9 +15,10 @@
   background-position: center;
   display: flex;
   flex-grow: 1;
-  justify-content: space-evenly;
+  justify-content: flex-end;
+  align-items: flex-end;
   a {
-    font-weight: 500;
+    font-weight: 300;
     font-size: 1.8em;
     letter-spacing: 0.2em;
   }
@@ -33,6 +34,6 @@
   .card {
     height: 250px;
     width: 360px;
-    margin: 16px;
+    margin: 8px;
   }
 }

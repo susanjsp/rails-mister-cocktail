@@ -3,19 +3,20 @@ body {
   background: rgb(0,0,0);
   // background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(17,17,17,0.6446953781512605) 53%, rgba(94,94,94,1) 100%);
   background: cover;
+  color: white;
 }
 
 .container {
-  text-align: center;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
   padding: 0;
-  display: block;
 }
 
-.wrapper {
+#wrapper {
   width: 80%;
   margin: 0 auto;
-  text-align: center
 }
 
 .header-txt {

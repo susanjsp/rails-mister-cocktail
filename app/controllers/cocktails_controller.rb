@@ -1,6 +1,7 @@
 class CocktailsController < ApplicationController
   def index
-    @cocktails = Cocktail.all
+    cocktails = Cocktail.all
+    @cocktails = cocktails.sort_by { |cocktail| cocktail.name }
   end
 
   def show

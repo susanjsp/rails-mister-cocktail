@@ -21,3 +21,16 @@
   letter-spacing: 0.25em;
   transition: 0.3s ease-in;
 }
+
+.btn-back {
+  font-size: 24px;
+  background-color: white;
+  background-image: $main-gradient;
+  background-size: 100%;
+  background-clip: text;
+  // text-fill-color: transparent;
+}
+
+.btn-back:hover {
+  color: white;
+}
