@@ -1,21 +1,30 @@
+
 <div class="container" id="wrapper">
-  <%= link_to icon('fas', 'arrow-left'), cocktails_path, class:"btn-back header-txt"%>
-
-  <h2 class="header-txt"><%= @cocktail.name %></h2>
-  <h3 class="header-txt">Ingredients</h3>
-  <table>
-    <% @cocktail.doses.each do |dose| %>
-      <tr>
-        <td><%= link_to icon('far', 'trash-alt'), dose_path(dose),
-            class: "header-txt",
-            method: :delete,
-            data: { confirm: "Are you sure?" } %></td>
-        <td><%= dose.description %></td>
-        <td><%= dose.ingredient.name.capitalize %></td>
-      </tr>
+  <div class="photo">
+    <% if @cocktail.photo.attached? %>
+      <%= cl_image_tag(@cocktail.photo.key, cloud_name: 'susanjsp') %>
     <% end %>
-  </table>
+  </div>
 
-  <%= link_to '+ ingredient', new_cocktail_dose_path(@cocktail), class:"btn-add header-txt"%>
+  <div class="ingredients">
+    <%= link_to icon('fas', 'arrow-left'), cocktails_path, class:"btn-back header-txt"%>
+
+    <h2 class="header-txt"><%= @cocktail.name %></h2>
+    <h3 class="header-txt">Ingredients</h3>
+    <table>
+      <% @cocktail.doses.each do |dose| %>
+        <tr>
+          <td><%= link_to icon('far', 'trash-alt'), dose_path(dose),
+              class: "header-txt",
+              method: :delete,
+              data: { confirm: "Are you sure?" } %></td>
+          <td><%= dose.description %></td>
+          <td><%= dose.ingredient.name.capitalize %></td>
+        </tr>
+      <% end %>
+    </table>
+
+    <%= link_to '+ ingredient', new_cocktail_dose_path(@cocktail), class:"btn-add header-txt"%>
+  </div>
 </div>
 

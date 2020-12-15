@@ -64,3 +64,4 @@ COCKTAILS.each do |cocktail, ingredients|
 end
 
 puts "Finished creating #{Cocktail.all.count} cocktails!"
+
