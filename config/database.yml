@@ -10,3 +10,9 @@ development:
 test:
   <<: *default
   database: rails-mister-cocktail_test
+
+production:
+  <<: *default
+  database: rails-mister-cocktail_production
+  # username: giftapes
+  # password: <%= ENV['GIFTAPES_DATABASE_PASSWORD'] %>

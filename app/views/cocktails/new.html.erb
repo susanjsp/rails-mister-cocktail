@@ -6,7 +6,7 @@
 
   <%= simple_form_for [ @cocktail] do |c| %>
     <%= c.input :name %>
-    <%= c.input :photo, as: :file %>
-    <%= c.submit "+ Create", class: "btn-add header-txt" %>
+    <%= c.input :photo %>
+    <%= c.submit "Create", class: "btn-add header-txt" %>
   <% end %>
 </div>

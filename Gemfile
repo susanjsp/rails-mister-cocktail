@@ -24,8 +24,8 @@ gem 'turbolinks', '~> 5'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.15.1'
 gem 'simple_form'
-gem 'dotenv-rails'
-gem 'cloudinary', '~> 1.16.0'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary'
 gem 'faker'
 # gem "aws-sdk-s3", require: false
 # Use Active Storage variant

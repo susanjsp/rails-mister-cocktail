@@ -2,12 +2,15 @@
   <h2 class="header-txt">recipes</h2>
   <ul class="card-container">
     <% @cocktails.each do |cocktail| %>
-      <li class="card">
-      <%= link_to cocktail.name, cocktail_path(cocktail), class: "header-txt", target:"_blank"%></li>
+      <% if cocktail.photo.attached? %>
+        <li class="card" style="background-image: url('<%= cl_image_path cocktail.photo.key %>')">
+      <% else %>
+        <li class="card" style="background-image: url('https://images.unsplash.com/photo-1547650221-62fbf15e8908?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')">
+      <% end %>
+      <%= link_to cocktail.name, cocktail_path(cocktail), class: "header-txt" %></li>
     <% end %>
   </ul>
 
   <p><%= link_to "+ New Cocktail", new_cocktail_path, class: "btn-add header-txt" %> </p>
 </div>
 
- <%# style="background-image: url('<%= cl_image_path @cocktail.photo.key, crop: :fill %>
