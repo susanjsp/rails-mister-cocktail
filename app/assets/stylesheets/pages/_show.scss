@@ -1,0 +1,25 @@
+.ingredients {
+  text-align: center;
+}
+#cocktail-show-img {
+  height: 40vw;
+  width: 100%;
+  object-fit: cover;
+  vertical-align: top;
+}
+
+@media (min-width: 768px) {
+  #cocktail-show-img {
+    height: 100vh;
+    width: 50%;
+    object-fit: cover;
+    vertical-align: top;
+  }
+  .ingredients-wrapper {
+    display: inline-block;
+  }
+  .ingredients {
+    text-align: center;
+    vertical-align: middle;
+  }
+}

@@ -1,14 +1,13 @@
 
-<div class="container" id="wrapper">
-  <div class="photo">
-    <% if @cocktail.photo.attached? %>
-      <%= cl_image_tag @cocktail.photo.key %>
-    <% end %>
-  </div>
+<% if @cocktail.photo.attached? %>
+  <%= cl_image_tag @cocktail.photo.key, :id=>"cocktail-show-img" %>
+<% end %>
 
+<div class="ingredients-wrapper">
   <div class="ingredients">
     <%= link_to icon('fas', 'arrow-left'), cocktails_path, class:"btn-back header-txt"%>
 
+    <h1><%= image_tag "banner.png", alt: "Cocktail Banner", id: "banner" %></h1>
     <h2 class="header-txt"><%= @cocktail.name %></h2>
     <h3 class="header-txt">Ingredients</h3>
     <table>
@@ -27,4 +26,3 @@
     <%= link_to '+ ingredient', new_cocktail_dose_path(@cocktail), class:"btn-add header-txt"%>
   </div>
 </div>
-
