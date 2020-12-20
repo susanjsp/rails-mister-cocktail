@@ -1,28 +1,34 @@
 
-<% if @cocktail.photo.attached? %>
-  <%= cl_image_tag @cocktail.photo.key, :id=>"cocktail-show-img" %>
-<% end %>
-
 <div class="ingredients-wrapper">
-  <div class="ingredients">
-    <%= link_to icon('fas', 'arrow-left'), cocktails_path, class:"btn-back header-txt"%>
+  <% if @cocktail.photo.attached? %>
+    <%= cl_image_tag @cocktail.photo.key, :id=>"cocktail-show-img" %>
+  <% else %>
+    <img src="https://images.unsplash.com/photo-1547650221-62fbf15e8908?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
+  <% end %>
 
-    <h1><%= image_tag "banner.png", alt: "Cocktail Banner", id: "banner" %></h1>
-    <h2 class="header-txt"><%= @cocktail.name %></h2>
-    <h3 class="header-txt">Ingredients</h3>
-    <table>
-      <% @cocktail.doses.each do |dose| %>
-        <tr>
-          <td><%= link_to icon('far', 'trash-alt'), dose_path(dose),
-              class: "header-txt",
-              method: :delete,
-              data: { confirm: "Are you sure?" } %></td>
-          <td><%= dose.description %></td>
-          <td><%= dose.ingredient.name.capitalize %></td>
-        </tr>
-      <% end %>
-    </table>
+  <div class="right-page">
+    <div class="show-banner">
+      <%= link_to icon('fas', 'arrow-left'), cocktails_path, class:"btn-back header-txt"%>
 
-    <%= link_to '+ ingredient', new_cocktail_dose_path(@cocktail), class:"btn-add header-txt"%>
+      <h1><%= image_tag "banner.png", alt: "Cocktail Banner", id: "banner" %></h1>
+    </div>
+    <div class="ingredients">
+      <h2 class="header-txt"><%= @cocktail.name %></h2>
+      <h3 class="header-txt">Ingredients</h3>
+      <table>
+        <% @cocktail.doses.each do |dose| %>
+          <tr>
+            <td><%= link_to icon('far', 'trash-alt'), dose_path(dose),
+                class: "header-txt",
+                method: :delete,
+                data: { confirm: "Are you sure?" } %></td>
+            <td><%= dose.description %></td>
+            <td><%= dose.ingredient.name.capitalize %></td>
+          </tr>
+        <% end %>
+      </table>
+
+      <%= link_to '+ ingredient', new_cocktail_dose_path(@cocktail), class:"btn-add header-txt"%>
+    </div>
   </div>
 </div>
