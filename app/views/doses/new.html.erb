@@ -1,13 +1,13 @@
 <div class="container" id="wrapper">
-  <h4> <%= link_to "Back", cocktails_path, class: "btn-add header-txt"%> </h4>
+  <%= link_to icon('fas', 'arrow-left'), cocktails_path, class:"btn-back header-txt"%>
 
   <h2 class="header-txt"><%= @cocktail.name %>: </h2>
-  <h3 class="header-txt">New Ingredient</h3>
+  <h2 class="header-txt">New Ingredient</h2>
 
   <%= simple_form_for ([@cocktail, @dose]) do |d| %>
     <%= d.association :ingredient %>
-    <%= d.input :description %>
-    <%= d.submit "+ ingredient", class: "btn-add header-txt" %>
+    <%= d.input :description, label:"Amount" %>
+    <%= d.submit "+ Add", class: "btn-add header-txt" %>
   <% end %>
 
 </div>

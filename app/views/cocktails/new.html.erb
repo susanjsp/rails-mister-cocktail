@@ -1,13 +1,13 @@
 <h1><%= image_tag "banner.png", alt: "Cocktail Banner", id: "banner" %></h1>
 
 <div class="container" id="wrapper">
-<h4> <%= link_to "Back", cocktails_path, class: "btn-add header-txt" %> </h4>
+  <%= link_to icon('fas', 'arrow-left'), cocktails_path, class:"btn-back header-txt"%>
 
-<h2 class="header-txt">Create new cocktail</h2>
+  <h2 class="header-txt">Create new cocktail</h2>
 
   <%= simple_form_for [ @cocktail] do |c| %>
     <%= c.input :name %>
     <%= c.input :photo %>
-    <%= c.submit "Create", class: "btn-add header-txt" %>
+    <p><%= c.submit "Create", class: "btn-add header-txt" %></p>
   <% end %>
 </div>
