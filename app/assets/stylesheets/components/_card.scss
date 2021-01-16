@@ -4,6 +4,8 @@
 
 .card {
   height: 25vw;
+  min-height: 100px;
+  min-width: 350px;
   width: 100vw;
   background-size: cover;
   background-position: center;
@@ -15,10 +17,13 @@
   transition: 0.5s ease;
   opacity: 0.75;
   text-align: right;
+  border: none;
   a {
     font-weight: 300;
     font-size: 1.8em;
     letter-spacing: 0.2em;
+    word-wrap: anywhere;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
   }
   &:hover {
     opacity: 1;
