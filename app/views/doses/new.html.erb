@@ -1,4 +1,7 @@
+<h1><%= image_tag "banner.png", alt: "Cocktail Banner", id: "banner" %></h1>
+
 <div class="container" id="wrapper">
+
   <%= link_to icon('fas', 'arrow-left'), cocktails_path, class:"btn-back header-txt"%>
 
   <h2 class="header-txt"><%= @cocktail.name %>: </h2>
