@@ -1,12 +1,12 @@
 <h1><%= image_tag "banner.png", alt: "Cocktail Banner", id: "banner" %></h1>
 
-<div class="container">
-  <ul class="card-container d-flex w-100 p-0">
+<div class="container-fluid">
+  <ul class="card-container d-flex w-100 p-0 justify-content-center">
     <% @cocktails.each do |cocktail| %>
       <% if cocktail.photo.attached? %>
-        <li class="card" style="background-image: url('<%= cl_image_path(cocktail.photo.key, :crop=>"scale" ) %>')">
+        <li class="cocktail-card" style="background-image: url('<%= cl_image_path(cocktail.photo.key, :crop=>"scale" ) %>')">
       <% else %>
-        <li class="card" style="background-image: url('https://images.unsplash.com/photo-1547650221-62fbf15e8908?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')">
+        <li class="cocktail-card" style="background-image: url('https://images.unsplash.com/photo-1547650221-62fbf15e8908?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')">
       <% end %>
       <%= link_to cocktail.name, cocktail_path(cocktail), class: "header-txt" %></li>
     <% end %>

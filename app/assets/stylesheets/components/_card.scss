@@ -2,7 +2,7 @@
   flex-wrap: wrap;
 }
 
-.card {
+.cocktail-card {
   height: 25vw;
   min-height: 100px;
   min-width: 350px;
@@ -11,7 +11,6 @@
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  flex-grow: 1;
   justify-content: flex-end;
   align-items: flex-end;
   transition: 0.5s ease;
@@ -36,14 +35,14 @@
   }
 }
 
-@media(min-width: 575px ) {
-  .card {
-    width: 45%;
+@media (min-width: 575px) {
+  .cocktail-card {
+    width: 90%;
     margin: 8px;
   }
 }
-@media (min-width: 720px ) {
-  .card {
+@media (min-width: 768px ) {
+  .cocktail-card {
     width: 25%;
     margin: 8px;
   }
